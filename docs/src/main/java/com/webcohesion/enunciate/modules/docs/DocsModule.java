@@ -241,6 +241,11 @@ public class DocsModule extends BasicGeneratingModule implements ApiRegistryAwar
         if (copyright != null) {
           model.put("copyright", copyright);
         }
+        
+        String disabledNewWindowLinks = this.enunciate.getConfiguration().getDisabledNewWindowLinks();
+        if (disabledNewWindowLinks != null) {
+          model.put("disabledNewWindowLinks", disabledNewWindowLinks);
+        }
 
         String title = this.enunciate.getConfiguration().getTitle();
         model.put("title", title == null ? "Web Service API" : title);
